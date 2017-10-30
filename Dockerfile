@@ -37,6 +37,9 @@ RUN /opt/scripts/find_ampl.sh
 # Add ampl and conda/python to the path
 ENV PATH /opt/miniconda/bin:/opt/ampl:$PATH
 
+# ipython/jupyter configurations
+COPY config/ipython_config.py /root/.ipython/profile_default/ipython_config.py
 EXPOSE 8888
+
 WORKDIR /root
 CMD ["/opt/scripts/start_notebook.sh"]
