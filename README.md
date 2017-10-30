@@ -4,8 +4,8 @@ A simple, Ubuntu-based docker image, with [AMPL](http://ampl.com/)
 and a bunch of useful python modules.
 
 It also includes [iampl](https://github.com/vitaut/iampl),
-an AMPL kernel for jupyter, so that you can run AMPL code 
-inside a jupyter notebook, and seamlessly switch between AMPL
+an AMPL kernel for [Jupyter](http://jupyter.org/), so that you can run AMPL code 
+inside a Jupyter notebook, and seamlessly switch between AMPL
 and Python code to process and visualize the data from your optimization problem.
 
 You can get the image either from docker hub:
@@ -24,4 +24,5 @@ provide the location of an archive containing the AMPL binary for linux as follo
     docker build --build-args AMPL=ampl.tgz -t ampl-docker .
 
 The archive must be within the Docker context, that is, in the subtree rooted in 
-directory where you run the `docker build` command.
+the directory where you run the `docker build` command.
+
