@@ -1,6 +1,6 @@
 # AMPL + Jupyter Notebook docker image
 
-[![docker pulls](https://img.shields.io/docker/pulls/leotac/ampl-notebook.svg)](https://hub.docker.com/r/leotac/ampl-notebook/) [![docker stars](https://img.shields.io/docker/stars/leotac/ampl-notebook.svg)](https://hub.docker.com/r/leotac/ampl-notebook/) [![docker size](https://img.shields.io/imagelayers/image-size/leotac/ampl-notebook/latest.svg)](https://hub.docker.com/r/leotac/ampl-notebook/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![docker pulls](https://img.shields.io/docker/pulls/leotac/ampl-notebook.svg)](https://hub.docker.com/r/leotac/ampl-notebook/) [![docker stars](https://img.shields.io/docker/stars/leotac/ampl-notebook.svg)](https://hub.docker.com/r/leotac/ampl-notebook/) [![](https://images.microbadger.com/badges/image/leotac/ampl-notebook.svg)](https://microbadger.com/images/jupyter/base-notebook "jupyter/base-notebook image metadata") [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A simple, Ubuntu-based docker image, with [AMPL](http://ampl.com/) and a bunch of useful python modules to run AMPL inside a Jupyter notebook.
 
