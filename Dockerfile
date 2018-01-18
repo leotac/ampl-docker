@@ -21,7 +21,7 @@ RUN cd /tmp && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-
     && rm Miniconda3-latest-Linux-x86_64.sh \
     && /opt/miniconda/bin/conda install jupyter ipython matplotlib pandas -y \
     && /opt/miniconda/bin/conda clean --all -y \
-    && /opt/miniconda/bin/pip install git+https://github.com/vitaut/iampl 
+    && /opt/miniconda/bin/pip install amplpy 
 
 # AMPL location (default: freely available demo version)
 ARG AMPL=http://ampl.com/demo/ampl.linux64.tgz
@@ -38,7 +38,6 @@ RUN /opt/scripts/find_ampl.sh
 ENV PATH /opt/miniconda/bin:/opt/ampl:$PATH
 
 # ipython/jupyter configurations
-COPY config/ipython_config.py /root/.ipython/profile_default/ipython_config.py
 EXPOSE 8888
 
 WORKDIR /root
