@@ -7,7 +7,7 @@ to do mathematical optimization inside [Jupyter](http://jupyter.org/) notebooks
 based on [AMPL](http://ampl.com/),
 a powerful mathematical optimization modelling language.
 
-It includes python modules for data analysis, and plotting (numpy, pandas,
+It includes python modules for data processing and analysis (numpy, pandas,
 matplotlib), and amplpy, a python interface for the AMPL language,
 so that you can seamlessly switch between AMPL and Python code to process and visualize
 the data from your optimization problems.
