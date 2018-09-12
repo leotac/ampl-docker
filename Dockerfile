@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 LABEL maintainer="leonardo.taccari@gmail.com"
 
-# Install utils
+# Install utils. libGL necessary for matplotlib.
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		ca-certificates \
@@ -11,17 +11,18 @@ RUN apt-get update \
                 less \
                 bzip2 \
                 git \
+                libgl1-mesa-glx \
         && apt-get clean \
-        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+        && rm -rf /var/lib/apt-get/lists/* /tmp/* /var/tmp/*
 
 # Install miniconda, iampl and other useful python modules
 RUN cd /tmp && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda \
     && rm Miniconda3-latest-Linux-x86_64.sh \
-    && /opt/miniconda/bin/conda install jupyter ipython matplotlib pandas -y \
+    && /opt/miniconda/bin/conda install python=3.6 jupyter ipython matplotlib pandas -y \
     && /opt/miniconda/bin/conda clean --all -y \
-    && /opt/miniconda/bin/pip install amplpy 
+    && /opt/miniconda/bin/pip install amplpy
 
 # AMPL location (default: freely available demo version)
 ARG AMPL=http://ampl.com/demo/ampl.linux64.tgz
@@ -36,6 +37,7 @@ RUN /opt/scripts/find_ampl.sh
 
 # Add ampl and conda/python to the path
 ENV PATH /opt/miniconda/bin:/opt/ampl:$PATH
+ENV LANG C.UTF-8
 
 # ipython/jupyter configurations
 EXPOSE 8888
